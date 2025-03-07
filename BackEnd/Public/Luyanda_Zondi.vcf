@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+FN:Luyanda Zondi
+TEL:+27633622772
+EMAIL:Luyandajnr19zondi@gmail.com
+URL:https://your-website.com
+ORG:Your Company Name
+TITLE:Software Developer
+ADR:;;Durban, South Africa;;;
+PHOTO;TYPE=JPEG;VALUE=URI:https://your-website.com/profile.jpg
+X-SOCIALPROFILE;TYPE=LinkedIn:https://www.linkedin.com/in/luyanda-lyon-bb3856213/
+X-SOCIALPROFILE;TYPE=Twitter:https://x.com/my_utopia_wrld
+X-SOCIALPROFILE;TYPE=Instagram:https://www.instagram.com/iamking.xi/
+END:VCARD

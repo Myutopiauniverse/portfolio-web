@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me - Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* White text */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #262626; /* Dark container background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4444; /* Red heading */
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        /* Contact Information */
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+    background-color: #333333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 250px;
+    text-align: center;
+    display: block;
+    text-decoration: none;
+    color: #fff;
+}
+
+.contact-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(255, 68, 68, 0.5);
+}
+
+.contact-item p {
+    margin: 0;
+    font-size: 1rem;
+    color: #ccc;
+}
+
+
+        .contact-item i {
+            font-size: 2rem;
+            color: #ff4444; /* Red icon */
+            margin-bottom: 15px;
+        }
+
+        .contact-item h3 {
+            color: #ff4444; /* Red heading */
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .contact-item a {
+            color: #ccc;
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .contact-item a:hover {
+            text-decoration: underline;
+            color: #ff4444;
+        }
+
+        /* Contact Form */
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #333333; /* Dark card background */
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #444;
+            border-radius: 5px;
+            background-color: #444;
+            color: #fff;
+            font-size: 1rem;
+        }
+
+        .contact-form textarea {
+            resize: vertical;
+            height: 150px;
+        }
+
+        .contact-form button {
+            padding: 10px 20px;
+            background-color: #ff4444; /* Red background */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .contact-form button:hover {
+            background-color: #cc0000; /* Darker red on hover */
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #ff4444; /* Red background */
+            color: #fff; /* White text */
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .back-button:hover {
+            background-color: #cc0000; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back to Home Button -->
+        <a href="Stalker.html" class="back-button">← Back to Home</a>
+
+        <h1>Contact Me</h1>
+
+        <!-- Contact Information -->
+        <!-- Contact Information -->
+<div class="contact-info">
+    <!-- Email -->
+    <a href="mailto:Luyandajnr19zondi@gmail.com" class="contact-item">
+        <i class="fas fa-envelope"></i>
+        <h3>Email</h3>
+        <p>Luyandajnr19zondi@gmail.com</p>
+    </a>
+
+    <!-- Phone -->
+    <a href="tel:+27633622772" class="contact-item">
+        <i class="fas fa-phone"></i>
+        <h3>Phone</h3>
+        <p>+27 63 362 2772</p>
+    </a>
+
+    <!-- Location (Google Maps) -->
+    <a href="https://maps.app.goo.gl/2b8Cedc1j4AAnESD9" target="_blank" class="contact-item">
+        <i class="fas fa-map-marker-alt"></i>
+        <h3>Location</h3>
+        <p>Durban, South Africa</p>
+    </a>
+
+    <!-- Save Contact -->
+    <a href="/BackEnd/Public/Luyanda_Zondi.vcf" download="/BackEnd/Public/Luyanda_Zondi.vcf" class="contact-item">
+        <i class="fas fa-user"></i>
+        <h3>Save Contact</h3>
+        <p>Download vCard</p>
+    </a>
+</div>
+
+
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form action="#" method="POST">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 My Portfolio. Designed and Developed by Luyanda Junior Zondi.</p>
+        </div>
+    </div>
+</body>
+</html>

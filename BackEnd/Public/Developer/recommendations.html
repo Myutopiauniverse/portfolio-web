@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recommendations - Portfolio</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* White text */
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #262626; /* Dark container background */
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4444; /* Red heading */
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+            animation: slideIn 1s ease-in-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Recommendations Grid */
+        .recommendations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .recommendation-card {
+            background-color: #333333; /* Dark card background */
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: cardFadeIn 1s ease-in-out;
+        }
+
+        @keyframes cardFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.9);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .recommendation-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 25px rgba(255, 68, 68, 0.7); /* Red shadow on hover */
+        }
+
+        .recommendation-card h3 {
+            color: #ff4444; /* Red heading */
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            animation: textPop 0.5s ease-in-out;
+        }
+
+        @keyframes textPop {
+            from {
+                transform: scale(0.9);
+            }
+            to {
+                transform: scale(1);
+            }
+        }
+
+        .recommendation-card p {
+            color: #ccc; /* Light gray text */
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .recommendation-card .author {
+            color: #ff4444; /* Red author name */
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 15px;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #ff4444; /* Red background */
+            color: #fff; /* White text */
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #cc0000; /* Darker red on hover */
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back to Home Button -->
+        <a href="developer.html" class="back-button">← Back to Home</a>
+
+        <h1>Recommendations</h1>
+
+        <!-- Recommendations Grid -->
+        <div class="recommendations-grid">
+            <!-- Recommendation 1 -->
+            <div class="recommendation-card">
+                <h3>Outstanding Problem Solver</h3>
+                <p>
+                    "Luyanda is an exceptional problem solver with a keen eye for detail. He consistently delivers high-quality work and is a valuable asset to any team."
+                </p>
+                <p class="author">- John Doe, Senior Developer</p>
+            </div>
+
+            <!-- Recommendation 2 -->
+            <div class="recommendation-card">
+                <h3>Team Player</h3>
+                <p>
+                    "Luyanda is a true team player who always goes above and beyond to ensure the success of the project. His dedication and work ethic are unmatched."
+                </p>
+                <p class="author">- Jane Smith, Project Manager</p>
+            </div>
+
+            <!-- Recommendation 3 -->
+            <div class="recommendation-card">
+                <h3>Innovative Thinker</h3>
+                <p>
+                    "Luyanda's innovative thinking and ability to adapt to new challenges make him a standout developer. He brings fresh ideas to the table and executes them flawlessly."
+                </p>
+                <p class="author">- Michael Brown, CTO</p>
+            </div>
+
+            <!-- Recommendation 4 -->
+            <div class="recommendation-card">
+                <h3>Reliable and Efficient</h3>
+                <p>
+                    "Luyanda is one of the most reliable and efficient developers I've worked with. He consistently meets deadlines and produces high-quality code."
+                </p>
+                <p class="author">- Sarah Johnson, Product Owner</p>
+            </div>
+
+            <!-- Recommendation 5 -->
+            <div class="recommendation-card">
+                <h3>Great Mentor</h3>
+                <p>
+                    "Luyanda is not only a skilled developer but also a great mentor. He is always willing to share his knowledge and help others grow."
+                </p>
+                <p class="author">- David Wilson, Junior Developer</p>
+            </div>
+
+            <!-- Recommendation 6 -->
+            <div class="recommendation-card">
+                <h3>Exceptional Leadership</h3>
+                <p>
+                    "Luyanda's leadership skills are exceptional. He has a natural ability to inspire and motivate his team to achieve their best."
+                </p>
+                <p class="author">- Emily Davis, Team Lead</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 My Portfolio. Designed and Developed by Luyanda Junior Zondi.</p>
+        </div>
+    </div>
+</body>
+</html>

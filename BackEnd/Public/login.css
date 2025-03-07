@@ -1,0 +1,237 @@
+/* Light Theme (Default) */
+:root {
+    --background-color: #f5f5f5;
+    --text-color: #333;
+    --input-background: #fff;
+    --input-border: #ccc;
+    --button-background: #0056b3;
+    --button-text-color: #fff;
+    --link-color: #0056b3;
+    --form-background: #fff;
+    --form-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+    --background-color: #121212;
+    --text-color: #fff;
+    --input-background: #333;
+    --input-border: #555;
+    --button-background: #bb86fc;
+    --button-text-color: #000;
+    --link-color: #bb86fc;
+    --form-background: #1e1e1e;
+    --form-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    background-image: linear-gradient(rgba(0,0,50,0.8),rgba(0,0,50,0.8,url(background.jpg)));
+    background-position: center;
+    background-size: cover;
+}
+
+.form-container {
+    background: var(--form-background);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: var(--form-shadow);
+    width: 100%;
+    max-width: 400px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.input-group input {
+    width: 95%;
+    padding: 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 5px;
+    background-color: var(--input-background);
+    color: var(grey);
+    font-size: 16px;
+    transition: border-color 0.3s, background-color 0.3s;
+}
+
+.input-group input:focus {
+    border-color: var(--button-background);
+    outline: none;
+}
+
+.password-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-wrapper input {
+    padding-right: 40px; /* Space for the toggle button */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    color: var(--text-color);
+    padding: 5px;
+    transition: color 0.3s;
+}
+
+.toggle-password:hover {
+    color: var(--button-background);
+}
+
+.forgot-password {
+    display: block;
+    text-align: right;
+    margin-bottom: 20px;
+    color: var(--link-color);
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.signup-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.register-btn {
+    width: 100%;
+    padding: 12px;
+    border: none;
+    border-radius: 5px;
+    background-color: var(--button-background);
+    color: var(--button-text-color);
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+.signup-btn:hover {
+    background-color: #007bff;
+}
+.register-btn:hover {background-color: #007bff;
+}
+.signin-text {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+.signin-link {
+    color: var(--link-color);
+    text-decoration: none;
+}
+
+.signin-link:hover {
+    text-decoration:underline;
+    text-emphasis-color: #007bff;
+}
+
+/* Theme Switch Styles */
+.theme-switch {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: background-color 0.3s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: black;
+    transition: transform 0.3s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #bb86fc;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Dark Theme Adjustments */
+[data-theme="dark"] .slider {
+    background-color: #555;
+}
+
+[data-theme="dark"] input:checked + .slider {
+    background-color: #007bff;
+}

@@ -1,0 +1,83 @@
+/* General Page Styling */
+body {
+    background-color: #141414;
+    color: white;
+    font-family: 'Netflix Sans', sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+/* Centered Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Heading Style */
+h1 {
+    font-size: 3rem;
+    margin-bottom: 30px;
+    animation: slideDown 1s ease-in-out forwards;
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+/* Profiles Container */
+.profiles {
+    display: flex;
+    gap: 40px; /* Increased spacing slightly for better layout */
+}
+
+/* Individual Profile Boxes */
+.profile {
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+    opacity: 0;
+    animation: popUp 0.5s ease forwards, bounce 2s infinite 1.5s;
+}
+
+/* Enlarged Profile Images */
+.profile img {
+    width: 150PX;  /* Increased size */
+    height: 140px; /* Increased size */
+    border-radius: 12px;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+}
+
+/* Hover Effect */
+.profile:hover img {
+   outline: 2px solid rgb(253, 0, 0);
+    outline-offset: 3px;
+}
+
+/* Profile Name (Slightly Bigger) */
+.profile p {
+    margin-top: 12px;
+    font-size: 1.2rem; /* Increased size */
+    font-weight: bold;
+}
+
+/* Animations */
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes popUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+@font-face {
+    font-family: 'Netflix Sans';
+    src: url('path/to/NetflixSans-Regular.otf') format('opentype');
+}
+

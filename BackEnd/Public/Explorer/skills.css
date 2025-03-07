@@ -1,0 +1,204 @@
+/* Global Styles */
+body {
+    font-family: 'Poppins', sans-serif; /* Updated to Poppins */
+    background-color: #111; /* Dark background */
+    color: #ffffff; /* White text */
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    min-height: 50px;
+    margin: 90px auto 50px; /* Top margin set to 60px */
+    padding: 20px;
+    background-color: #1111; /* Dark container background */
+    border-radius: 10px;
+    box-shadow: 0 0 20px #111111;
+}
+
+h1 {
+    text-align: center;
+    color: #cfcfcf; /* Red heading */
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+}
+
+h2 {
+    text-align: center;
+    color: #cfcfcf; /* Red heading */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 1.8rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.skill-card {
+    text-decoration: none; /* Remove underline */
+    color: inherit; /* Inherit text color */
+    display: block; /* Make the entire card clickable */
+    width: 180px; /* Set a fixed width */
+    height: 80px; /* Set a fixed height */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: transparent;
+    border-radius: 10px;
+    box-shadow: transparent;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Red shadow on hover */
+}
+
+.skill-card img {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 15px;
+    filter: invert(19%) sepia(100%) saturate(7500%) hue-rotate(0deg);
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    background: linear-gradient(180deg, rgb(0 0 1 / 90%) 10%, transparent 100%);
+    padding: 15px 50px;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: background 0.6s ease-in-out;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    padding: 0;
+}
+
+.nav-links li {
+    display: inline;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+    color: red; /* Turn red when hovered */
+}
+
+.skill-card h3 {
+    font-size: 1.2rem;
+    color: #cfcfcf; /* Red text */
+    margin: 0;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 40px;
+    font-size: 14px;
+    color: #777;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: left;
+    gap: 15px;
+    overflow-x: auto;
+    padding: 10px;
+}
+
+/* Skills Scroll Container */
+.skills-scroll {
+    display: flex;
+    overflow: hidden;
+    user-select: none;
+    gap: 1px; /* Reduced gap between elements */
+    mask-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0),
+        rgba(0, 0, 0, 1) 10%,
+        rgba(0, 0, 0, 1) 90%,
+        rgba(0, 0, 0, 0)
+    );
+    padding: 5px 0; /* Reduced padding */
+}
+
+/* Skills Grid */
+.skills-grid {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 1px; /* Reduced space between skill cards */
+    min-width: 100%;
+    animation: scroll-left 30s linear infinite;
+}
+
+/* Backend moves in opposite direction */
+.backend .skills-grid {
+    animation: scroll-right 35s linear infinite;
+}
+
+/* Pause animation on hover */
+.skills-scroll:hover .skills-grid,
+.backend .skills-scroll:hover .skills-grid {
+    animation-play-state: paused;
+}
+
+/* Infinite Scroll Animations */
+@keyframes scroll-left {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes scroll-right {
+    from {
+        transform: translateX(-100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.skill-card {
+    animation: fadeIn 0.5s ease-in-out;
+}

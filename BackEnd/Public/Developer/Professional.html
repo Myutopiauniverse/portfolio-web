@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Timeline - Portfolio</title>
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a; /* Dark background */
+            color: #ffffff; /* White text */
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #262626; /* Dark container background */
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        h1 {
+            text-align: center;
+            color: #ff4444; /* Red heading */
+            margin-bottom: 40px;
+            font-size: 2.5rem;
+        }
+
+        /* Timeline Scrollable Container (No Scrollbar) */
+        .timeline-container {
+            overflow: hidden;
+            white-space: nowrap;
+            padding: 20px 0;
+            cursor: grab;
+            user-select: none;
+            display: flex;
+            gap: 20px;
+        }
+
+        /* Timeline Items */
+        .timeline {
+            display: flex;
+            gap: 20px;
+            width: max-content;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .timeline-item {
+            flex: 0 0 300px;
+            background-color: #333333; /* Dark card background */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: inline-block;
+        }
+
+        .timeline-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 0 20px rgba(255, 68, 68, 0.5); /* Red shadow on hover */
+        }
+
+        .timeline-item h3 {
+            color: #ff4444; /* Red heading */
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .timeline-item p {
+            color: #ccc; /* Light gray text */
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        .timeline-item a {
+            color: #ff4444; /* Red link */
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .timeline-item a:hover {
+            text-decoration: underline;
+        }
+
+        /* Show More Button */
+        .show-more {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .show-more button {
+            padding: 10px 20px;
+            background-color: #ff4444;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .show-more button:hover {
+            background-color: #cc0000;
+        }
+
+        /* Footer */
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        /* Back Button Styles */
+        .back-button {
+            display: inline-block;
+            margin-bottom: 20px;
+            padding: 10px 20px;
+            background-color: #ff4444; /* Red background */
+            color: #fff; /* White text */
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #cc0000; /* Darker red on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Back to Home Button -->
+        <a href="developer.html" class="back-button">← Back to Home</a>
+
+        <h1>My Timeline</h1>
+
+        <!-- Timeline Container -->
+        <div class="timeline-container" id="timelineContainer">
+            <div class="timeline" id="timeline">
+                <div class="timeline-item">
+                    <h3>2021 - First Portfolio Website</h3>
+                    <p>Created my first portfolio website using HTML, CSS, and JavaScript.</p>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>2022 - E-commerce Website</h3>
+                    <p>Developed an e-commerce website using React.js and Node.js.</p>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>2023 - Blog Platform</h3>
+                    <p>Built a blog platform using Django and PostgreSQL.</p>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>2024 - AI Chatbot</h3>
+                    <p>Developed an AI-powered chatbot using Python and TensorFlow.</p>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>2025 - Mobile App</h3>
+                    <p>Created a task management app using Flutter.</p>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+                <div class="timeline-item">
+                    <h3>2026 - Blockchain Project</h3>
+                    <p>Worked on a blockchain-based payment system.</p>
+                    <a href="#" target="_blank">View Project</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Show More Button -->
+        <div class="show-more">
+            <button onclick="scrollRight()">Show More →</button>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2025 My Portfolio. Designed and Developed by Luyanda Junior Zondi.</p>
+        </div>
+    </div>
+
+    <script>
+        let timeline = document.getElementById("timeline");
+        let timelineContainer = document.getElementById("timelineContainer");
+        let isDown = false;
+        let startX;
+        let scrollLeft;
+
+        // Drag & Swipe functionality
+        timelineContainer.addEventListener("mousedown", (e) => {
+            isDown = true;
+            startX = e.pageX - timelineContainer.offsetLeft;
+            scrollLeft = timelineContainer.scrollLeft;
+        });
+
+        timelineContainer.addEventListener("mouseleave", () => {
+            isDown = false;
+        });
+
+        timelineContainer.addEventListener("mouseup", () => {
+            isDown = false;
+        });
+
+        timelineContainer.addEventListener("mousemove", (e) => {
+            if (!isDown) return;
+            e.preventDefault();
+            let x = e.pageX - timelineContainer.offsetLeft;
+            let walk = (x - startX) * 3;
+            timelineContainer.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch support
+        timelineContainer.addEventListener("touchstart", (e) => {
+            startX = e.touches[0].clientX;
+            scrollLeft = timelineContainer.scrollLeft;
+        });
+
+        timelineContainer.addEventListener("touchmove", (e) => {
+            let x = e.touches[0].clientX;
+            let walk = (x - startX) * 2;
+            timelineContainer.scrollLeft = scrollLeft - walk;
+        });
+
+        function scrollRight() {
+            timelineContainer.scrollBy({ left: 400, behavior: 'smooth' });
+        }
+    </script>
+</body>
+</html>
